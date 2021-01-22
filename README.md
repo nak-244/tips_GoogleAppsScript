@@ -1,2 +1,2 @@
 # tips_GoogleAppsScript
-Google SpreadsheetでURLからタイトルに変換(
+Google SpreadsheetでURLからタイトルに変換(オリジナルの関数を作成)
