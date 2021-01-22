@@ -1,2 +1,5 @@
 # tips_GoogleAppsScript
 Google SpreadsheetでURLからタイトルに変換(オリジナルの関数を作成)
+
+URLからタイトルを取得するのはURLFetchAppを使うことで簡単に実現できる。  
+Spreadsheetでハイパーリンクとしたい場合も標準関数と組み合わせることで簡単に実現できる。  
