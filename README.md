@@ -21,3 +21,19 @@ function URLtoTitle(url) {
 `=URLtoTitle(セル)`
 
 上記　var myRegexp = /<title>([\s\S]*?)<\/title>/i;　を変更すれば、簡易的なスクレイピングも可能。
+
+## URLからページ内の一部を抜き出す
+### GAS
+```java:URLからページ内の一部を抜き出す
+function URLtoTitle(url) {
+  var response = UrlFetchApp.fetch(url);
+
+  var myRegexp = /<img src=\"https:\/\/olp.hibarai.com\/img_sys_link\/1\/job\/olp\/([\s\S]*?)\/35.jpg/gi;
+  var match = myRegexp.exec(response.getContentText());
+  var title = match[1];
+
+  title = title.replace(/(^\s+)|(\s+$)/g, "");
+  return(title);
+}
+```
+上記は、しごとらの詳細ページで、`<img src="https://olp.hibarai.com/img_sys_link/1/job/olp/198929/35.jpg" alt="コールセンター・テレオペ(短期のコールセンター/シフト相談可能！)" />`　から `198929` を抜き出す方法。
